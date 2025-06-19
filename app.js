@@ -1,4 +1,5 @@
 const path = require('path');
+const compression = require('compression');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -93,7 +94,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 // Data sanitization against NoSQL query injection
 app.use(mongosanitize());
-
+app.use(compression());
 //data sanitization against xss attacks
 app.use(xss());
 
@@ -114,8 +115,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
-    console.log(req.headers);
-    console.log(req.cookies);
     next();
 });
 

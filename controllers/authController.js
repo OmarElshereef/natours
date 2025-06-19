@@ -124,9 +124,6 @@ const isLoggedIn = catchAsync(async (req, res, next) => {
     }
 
     if (!token) {
-        console.log(
-            'no token found, user is not logged in, skipping auth xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-        );
         return next();
     }
 
@@ -140,7 +137,6 @@ const isLoggedIn = catchAsync(async (req, res, next) => {
     if (currentUser.changedPasswordAfter(decoded.iat)) {
         return next();
     }
-    console.log('current user', currentUser);
     res.locals.user = currentUser;
     next();
 });
