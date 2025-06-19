@@ -11,11 +11,7 @@ This application allows users to browse various nature tours, view detailed info
 ## Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
 
-# Navigate to the project directory
-cd 4-natours/starter2
 
 # Install dependencies
 npm install
@@ -25,10 +21,10 @@ npm install
 
 ```bash
 # Run in development mode
-npm run dev
+npm run startDev
 
 # Run in production mode
-npm start
+npm startProd
 ```
 
 ## Features
@@ -50,11 +46,3 @@ npm start
 -   JWT for authentication
 -   Stripe for payment processing
 -   Pug templates for server-side rendering
-
-## Project Structure
-
-This is a starter template. As you progress through the course, you'll build upon this foundation to create a fully-functional application.
-
-## Credits
-
-This project is part of the Complete Node.js Bootcamp created by Jonas Schmedtmann.
